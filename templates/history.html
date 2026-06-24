@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Your Scan History</h2>
+{% if reports %}
+    {% for report in reports %}
+        <div class="card">
+            <p><strong>Saved Resume Text:</strong> {{ report.resume[:100] }}...</p>
+            
+            <h3>Skills</h3>
+            <ul>
+            {% for s in report.result.get("skills", []) %}
+                <li>{{ s }}</li>
+            {% endfor %}
+            </ul>
+
+            <h3>Missing Skills</h3>
+            <ul>
+            {% for s in report.result.get("missing_skills", []) %}
+                <li>{{ s }}</li>
+            {% endfor %}
+            </ul>
+
+            <h3>Roadmap</h3>
+            <ul>
+            {% for s in report.result.get("roadmap", []) %}
+                <li>{{ s }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>No history records found yet. Go to the dashboard to scan your first resume!</p>
+{% endif %}
+
+{% endblock %}

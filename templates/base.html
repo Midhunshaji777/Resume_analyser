@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyser 1.0</title>
+    <link rel="stylesheet" href ="{{ url_for('static', filename = 'style.css') }}?v=1.0">
+</head>
+<body>
+    <header>
+        <div class="nav_container">
+            <div class = "logo">
+                <a href = "/dashboard">AI Resume Analyser <span class="version">1.0</span></a>
+            </div>
+            <nav class = "navbar">
+                <a href="/history" class ="nav_link">History</a>
+                <a href="/dashboard" class ="nav_link">Dashboard</a>
+                <a href="/logout" class ="nav_link">Logout</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        {% block content %} {% endblock %}
+    </main>
+    <footer>
+        <p>@2026 AI Resume Analyser</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="auth_container">
+    <div class="auth_card">
+        <h2>Create Account</h2>
+        <p class="sub_text">
+            Start Your AI Carrier Journey
+        </p>
+        <form method ="POST">
+          <input type="email" name="email" placeholder="Enter Your Email" required>
+          <input type="password" name="password" placeholder="Create a password" required>
+          <p class="sub_text">Use atleast 6 Characters</p>
+          <button type="submit">Sign Up</button>
+        </form>
+        <p class="switch_auth">
+            Allready have account ? <a href="/login">Login</a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
